@@ -18,7 +18,8 @@ class SimulationResults:
 class Game:
     def __init__(self, trader: Type[Trader], price_history) -> None:
         self.trader = trader
-        self.price_history = price_history
+        self.price_history = price_history[0:600]
+        print("price history: ", self.price_history)
 
     def run_game(self, delay_list, simple=True, n_stocks=4):
         stock_list = [f"Stock{s}" for s in range(1, n_stocks+1)]
